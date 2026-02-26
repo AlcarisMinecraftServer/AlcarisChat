@@ -1,0 +1,5 @@
+rootProject.name = 'AlcarisTemplate'
+
+include 'common'
+include 'paper'
+include 'velocity'

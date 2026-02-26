@@ -1,0 +1,65 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version "8.3.0"
+}
+
+group = 'net.alcaris.plugin'
+version = "${plugin_version}"
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'com.gradleup.shadow'
+
+    repositories {
+        mavenCentral()
+        maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+        testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+        options.release.set(21)
+    }
+
+    tasks.test {
+        useJUnitPlatform()
+    }
+
+    def plugin_full_id = 'alcaris' + plugin_id
+    def plugin_name = rootProject.name
+
+    tasks.processResources {
+        filteringCharset = 'UTF-8'
+        filesNotMatching(['**/*.png', '**/*.svg']) {
+            filter(ReplaceTokens, beginToken: '${', endToken: '}', tokens: [
+                    'version'           : rootProject.version.toString(),
+                    'plugin_id'         : plugin_id.toString(),
+                    'plugin_full_id'    : plugin_full_id.toString(),
+                    'plugin_name'       : plugin_name.toString(),
+                    'plugin_description': plugin_description.toString()
+            ])
+        }
+    }
+}
+
+subprojects {
+    version = rootProject.version
+    archivesBaseName = "${rootProject.name}-${project.name.capitalize()}"
+
+    if (['paper', 'velocity'].contains(project.name)) {
+        tasks.shadowJar {
+            destinationDirectory.set(file("$rootDir/target"))
+            archiveClassifier.set('')
+        }
+
+        tasks.jar {
+            dependsOn(tasks.shadowJar)
+        }
+    }
+}
