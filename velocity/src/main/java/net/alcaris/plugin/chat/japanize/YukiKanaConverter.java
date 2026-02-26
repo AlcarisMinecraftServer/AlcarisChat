@@ -203,7 +203,7 @@ public final class YukiKanaConverter {
         map.put("[", "「"); map.put("]", "」");
         map.put("<", "＜"); map.put(">", "＞");
         map.put("&", "＆");
-        map.put("\"", "\u201c");
+        map.put("\"", "“");
         map.put("(", "（"); map.put(")", "）");
 
         String[] keys = map.keySet().toArray(new String[0]);

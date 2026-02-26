@@ -37,10 +37,10 @@ public final class PlayerChatListener {
         if (prefix.isEmpty()) return playerName;
         String lastColor = "";
         for (int i = prefix.length() - 2; i >= 0; i--) {
-            if (prefix.charAt(i) == '\u00a7' && i + 1 < prefix.length()) {
+            if (prefix.charAt(i) == '§' && i + 1 < prefix.length()) {
                 char c = prefix.charAt(i + 1);
                 if (isValidColorChar(c)) {
-                    lastColor = "\u00a7" + c;
+                    lastColor = "§" + c;
                     break;
                 }
             }
@@ -57,6 +57,7 @@ public final class PlayerChatListener {
     }
 
     @Subscribe
+    @SuppressWarnings("deprecation")
     public void onPlayerChat(@NotNull PlayerChatEvent event) {
         Player player = event.getPlayer();
         UUID playerId = player.getUniqueId();
@@ -73,7 +74,7 @@ public final class PlayerChatListener {
             if (playerMessage == null || playerMessage.isBlank()) return;
 
             if (config.isColorableChat()) {
-                playerMessage = playerMessage.replace("&", "\u00a7");
+                playerMessage = playerMessage.replace("&", "§");
             }
 
             String playerName = player.getUsername();
@@ -99,8 +100,8 @@ public final class PlayerChatListener {
             final String finalConverted = convertedMessage;
 
             if (wasConverted) {
-                String sameServerMsg = prefix + coloredPlayerName + "\u00a7a: \u00a7f" + finalMessage
-                        + " \u00a76(" + finalConverted + ")";
+                String sameServerMsg = prefix + coloredPlayerName + "§a: §f" + finalMessage
+                        + " §6(" + finalConverted + ")";
                 String otherServerMsg = "<white>[</white><dark_green>@" + escape(displayServerName) + "</dark_green><white>]</white> "
                         + "<white>" + escape(playerName) + "</white><green>: </green><white>" + escape(finalMessage)
                         + "</white> <gold>(" + finalConverted + ")</gold>";
@@ -115,7 +116,7 @@ public final class PlayerChatListener {
                 });
                 logger.info("[{}]<{}> {} ({})", displayServerName, playerName, finalMessage, finalConverted);
             } else {
-                String sameServerMsg = prefix + coloredPlayerName + "\u00a7a: \u00a7f" + finalMessage;
+                String sameServerMsg = prefix + coloredPlayerName + "§a: §f" + finalMessage;
 
                 if (currentServer != null) {
                     Component msg = LegacyComponentSerializer.legacySection().deserialize(sameServerMsg);
