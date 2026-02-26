@@ -238,7 +238,4 @@ public final class YukiKanaConverter {
         return result.toString();
     }
 
-    public static String fixBrackets(String text) {
-        return text.replace("（", "(").replace("）", ")");
-    }
 }

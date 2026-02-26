@@ -16,12 +16,4 @@ public enum JapanizeType {
     public String toString() {
         return id;
     }
-
-    public static JapanizeType fromId(String id, JapanizeType def) {
-        if (id == null) return def;
-        for (JapanizeType type : values()) {
-            if (type.id.equalsIgnoreCase(id)) return type;
-        }
-        return def;
-    }
 }

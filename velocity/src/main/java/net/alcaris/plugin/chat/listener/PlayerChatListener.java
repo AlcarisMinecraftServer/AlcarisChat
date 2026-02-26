@@ -16,7 +16,6 @@ import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
-import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
@@ -84,8 +83,7 @@ public final class PlayerChatListener {
 
             String convertedMessage = "";
             try {
-                convertedMessage = Japanizer.japanize(playerMessage, JapanizeType.GOOGLE_IME,
-                        Collections.emptyMap());
+                convertedMessage = Japanizer.japanize(playerMessage, JapanizeType.GOOGLE_IME);
             } catch (Exception e) {
                 logger.error("Japanize failed: player={}, msg={}", playerName, playerMessage, e);
             }

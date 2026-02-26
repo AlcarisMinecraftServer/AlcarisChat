@@ -48,26 +48,6 @@ public final class TabListUtils {
         }
     }
 
-    public static void reload(@NotNull ProxyServer proxyServer, boolean showGlobalTabList) {
-        if (showGlobalTabList) refresh(proxyServer);
-        else reset(proxyServer);
-    }
-
-    public static void reset(@NotNull ProxyServer proxyServer) {
-        Collection<Player> allPlayers = proxyServer.getAllPlayers();
-        for (Player player1 : allPlayers) {
-            TabList tabList = player1.getTabList();
-            RegisteredServer server1 = player1.getCurrentServer()
-                    .map(ServerConnection::getServer).orElse(null);
-            for (Player player2 : allPlayers) {
-                if (player1.equals(player2)) continue;
-                Optional<ServerConnection> optional2 = player2.getCurrentServer();
-                if (optional2.isPresent() && optional2.get().getServer().equals(server1)) continue;
-                tabList.removeEntry(player2.getUniqueId());
-            }
-        }
-    }
-
     public static void remove(@NotNull Player player, @NotNull ProxyServer proxyServer) {
         UUID uniqueId = player.getUniqueId();
         proxyServer.getAllPlayers().forEach(p -> p.getTabList().removeEntry(uniqueId));

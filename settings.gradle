@@ -1,5 +1,4 @@
 rootProject.name = 'AlcarisChat'
 
-include 'common'
 include 'paper'
 include 'velocity'
