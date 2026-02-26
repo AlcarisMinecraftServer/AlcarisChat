@@ -1,4 +1,4 @@
-rootProject.name = 'AlcarisTemplate'
+rootProject.name = 'AlcarisChat'
 
 include 'common'
 include 'paper'

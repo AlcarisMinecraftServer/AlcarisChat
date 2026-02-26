@@ -4,4 +4,4 @@ description: ${plugin_description}
 api-version: 1.21
 website: "https://www.alcaris.net"
 authors: ["Alcaris Team"]
-main: net.alcaris.plugin.${plugin_id}.PaperMain
+main: net.alcaris.plugin.chat.PaperMain

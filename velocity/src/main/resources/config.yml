@@ -1,0 +1,18 @@
+# Send sample players on server list ping
+send_players_on_ping: false
+
+# Show all proxy players on tab list
+show_global_tab_list: false
+
+# Custom /server command response
+custom_server_command: true
+
+# Allow color codes (&) in chat
+colorable_chat: true
+
+# Server ID -> display name mapping
+server_names:
+  s1: "Lobby"
+  s2: "Resource"
+  s3: "PvE"
+  s4: "Arcade"

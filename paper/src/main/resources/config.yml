@@ -1,0 +1,5 @@
+# LuckPerms によるプレフィックス取得を有効にするか
+use_luckperms: true
+
+# プレフィックスが取得できなかった場合のデフォルト値
+default_prefix: ""

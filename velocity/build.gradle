@@ -3,4 +3,15 @@ dependencies {
 
     compileOnly 'com.velocitypowered:velocity-api:3.4.0-SNAPSHOT'
     annotationProcessor 'com.velocitypowered:velocity-api:3.4.0-SNAPSHOT'
+
+    compileOnly 'com.google.code.gson:gson:2.10.1'
+    compileOnly 'org.yaml:snakeyaml:2.3'
+}
+
+tasks.named('jar') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.named('shadowJar') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
