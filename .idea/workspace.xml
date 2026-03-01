@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c11dfbd6-bcf5-4146-8ee1-05c793b1380a" name="変更" comment="feat: actionsを追加">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
-    </list>
+    <list default="true" id="c11dfbd6-bcf5-4146-8ee1-05c793b1380a" name="変更" comment="fix: 自動に変更" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +75,7 @@
       <workItem from="1772107521036" duration="68000" />
       <workItem from="1772107649024" duration="6588000" />
       <workItem from="1772170241374" duration="446000" />
-      <workItem from="1772357348357" duration="1116000" />
+      <workItem from="1772357348357" duration="1413000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial commit">
       <option name="closed" value="true" />
@@ -119,7 +117,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772359667651</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix: perm">
+      <option name="closed" value="true" />
+      <created>1772359735648</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772359735648</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix: 自動に変更">
+      <option name="closed" value="true" />
+      <created>1772359993344</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772359993344</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +145,8 @@
     <MESSAGE value="fix: removed warning" />
     <MESSAGE value="fix: TabListにおける不具合を修正" />
     <MESSAGE value="feat: actionsを追加" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: actionsを追加" />
+    <MESSAGE value="fix: perm" />
+    <MESSAGE value="fix: 自動に変更" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 自動に変更" />
   </component>
 </project>
