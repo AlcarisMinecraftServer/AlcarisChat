@@ -52,7 +52,7 @@ public final class ServerConnectedListener {
 
         if (config.isShowGlobalTabList()) {
             proxyServer.getScheduler()
-                    .buildTask(plugin, () -> TabListUtils.refresh(proxyServer))
+                    .buildTask(plugin, () -> TabListUtils.refresh(proxyServer, config.getTabListPrefixes()))
                     .delay(2, TimeUnit.SECONDS)
                     .schedule();
         }

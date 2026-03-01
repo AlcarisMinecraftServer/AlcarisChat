@@ -59,7 +59,6 @@ public final class ComponentUtils {
                             .appendNewline().append(Component.text("ID: " + serverId))));
         } else {
             return nameComponent
-                    .clickEvent(ClickEvent.runCommand("/server " + serverId))
                     .hoverEvent(HoverEvent.showText(
                             Component.translatable("velocity.command.server-tooltip-offer-connect-server")
                                     .appendNewline().append(playerCountText)

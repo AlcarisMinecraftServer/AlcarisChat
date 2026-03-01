@@ -23,6 +23,7 @@ public final class VelocityChatConfig {
     private boolean customServerCommand = true;
     private boolean colorableChat = true;
     private Map<String, String> serverNames = defaultServerNames();
+    private Map<String, String> tabListPrefixes = Collections.emptyMap();
 
     public VelocityChatConfig(Path dataDirectory, Logger logger) {
         this.dataDirectory = dataDirectory;
@@ -65,6 +66,16 @@ public final class VelocityChatConfig {
                 }
                 serverNames = Collections.unmodifiableMap(parsed);
             }
+
+            Object tabListPrefixesObj = data.get("tab_list_prefixes");
+            if (tabListPrefixesObj instanceof Map<?, ?> prefixMap) {
+                Map<String, String> parsed = new LinkedHashMap<>();
+                for (Map.Entry<?, ?> entry : prefixMap.entrySet()) {
+                    parsed.put(String.valueOf(entry.getKey()),
+                            String.valueOf(entry.getValue()).replace("&", "§"));
+                }
+                tabListPrefixes = Collections.unmodifiableMap(parsed);
+            }
         } catch (IOException e) {
             logger.error("Failed to load config.yml", e);
         }
@@ -75,6 +86,7 @@ public final class VelocityChatConfig {
     public boolean isCustomServerCommand() { return customServerCommand; }
     public boolean isColorableChat() { return colorableChat; }
     public Map<String, String> getServerNames() { return serverNames; }
+    public Map<String, String> getTabListPrefixes() { return tabListPrefixes; }
 
     private static boolean getBool(Map<String, Object> data, String key, boolean def) {
         Object val = data.get(key);

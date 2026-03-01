@@ -2,7 +2,14 @@
 send_players_on_ping: false
 
 # Show all proxy players on tab list
-show_global_tab_list: false
+show_global_tab_list: true
+
+# Prefix shown in tab list for players on each server (supports & color codes)
+tab_list_prefixes:
+  s1: "&a[Lobby]&r "
+  s2: "&b[Resource]&r "
+  s3: "&c[PvE]&r "
+  s4: "&d[Arcade]&r "
 
 # Custom /server command response
 custom_server_command: true
