@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c11dfbd6-bcf5-4146-8ee1-05c793b1380a" name="変更" comment="fix: TabListにおける不具合を修正" />
+    <list default="true" id="c11dfbd6-bcf5-4146-8ee1-05c793b1380a" name="変更" comment="feat: actionsを追加">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +77,7 @@
       <workItem from="1772107521036" duration="68000" />
       <workItem from="1772107649024" duration="6588000" />
       <workItem from="1772170241374" duration="446000" />
-      <workItem from="1772357348357" duration="994000" />
+      <workItem from="1772357348357" duration="1116000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial commit">
       <option name="closed" value="true" />
@@ -109,7 +111,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772359441300</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: actionsを追加">
+      <option name="closed" value="true" />
+      <created>1772359667651</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772359667651</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +130,7 @@
     <MESSAGE value="fix: unused" />
     <MESSAGE value="fix: removed warning" />
     <MESSAGE value="fix: TabListにおける不具合を修正" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: TabListにおける不具合を修正" />
+    <MESSAGE value="feat: actionsを追加" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: actionsを追加" />
   </component>
 </project>
