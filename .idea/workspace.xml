@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c11dfbd6-bcf5-4146-8ee1-05c793b1380a" name="変更" comment="fix: :(">
+    <list default="true" id="c11dfbd6-bcf5-4146-8ee1-05c793b1380a" name="変更" comment="feat: deployを試験的実装">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +58,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Developments\alcaris\plugins\AlcarisChat\.github\workflows" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -77,7 +82,7 @@
       <workItem from="1772107521036" duration="68000" />
       <workItem from="1772107649024" duration="6588000" />
       <workItem from="1772170241374" duration="446000" />
-      <workItem from="1772357348357" duration="7803000" />
+      <workItem from="1772357348357" duration="8201000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial commit">
       <option name="closed" value="true" />
@@ -143,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772360064353</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: deployを試験的実装">
+      <option name="closed" value="true" />
+      <created>1772424531634</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1772424531634</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +171,7 @@
     <MESSAGE value="fix: perm" />
     <MESSAGE value="fix: 自動に変更" />
     <MESSAGE value="fix: :(" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: :(" />
+    <MESSAGE value="feat: deployを試験的実装" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: deployを試験的実装" />
   </component>
 </project>
