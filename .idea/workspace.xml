@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c11dfbd6-bcf5-4146-8ee1-05c793b1380a" name="変更" comment="feat: v1.0.1">
+    <list default="true" id="c11dfbd6-bcf5-4146-8ee1-05c793b1380a" name="変更" comment="feat: v1.0.2">
       <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-paper.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy-velocity.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +117,7 @@
       <workItem from="1772170241374" duration="446000" />
       <workItem from="1772357348357" duration="8201000" />
       <workItem from="1772426258045" duration="59000" />
-      <workItem from="1772426547747" duration="16000" />
+      <workItem from="1772426547747" duration="1940000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initial commit">
       <option name="closed" value="true" />
@@ -197,7 +199,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772426293770</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: v1.0.2">
+      <option name="closed" value="true" />
+      <created>1772426843599</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1772426843599</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: v1.0.2">
+      <option name="closed" value="true" />
+      <created>1772426848834</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1772426848834</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +232,7 @@
     <MESSAGE value="fix: :(" />
     <MESSAGE value="feat: deployを試験的実装" />
     <MESSAGE value="feat: v1.0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: v1.0.1" />
+    <MESSAGE value="feat: v1.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: v1.0.2" />
   </component>
 </project>

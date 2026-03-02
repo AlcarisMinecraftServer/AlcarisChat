@@ -1,4 +1,4 @@
-name: Build and Release
+name: Build and Deploy
 
 on:
   push:
@@ -10,6 +10,9 @@ permissions:
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.value }}
+      exists: ${{ steps.version.outputs.exists }}
 
     steps:
       - uses: actions/checkout@v4
@@ -53,8 +56,30 @@ jobs:
           tag_name: "v${{ steps.version.outputs.value }}"
           files: target/*.jar
 
-      - name: Push tag to trigger deploy
-        if: steps.version.outputs.exists == 'false'
-        run: |
-          git tag "v${{ steps.version.outputs.value }}"
-          git push origin "v${{ steps.version.outputs.value }}"
+  deploy-paper:
+    needs: build-and-release
+    if: needs.build-and-release.outputs.exists == 'false'
+    uses: AlcarisMinecraftServer/.github/.github/workflows/deploy.yml@main
+    with:
+      jar_name: "AlcarisChat-Paper-*.jar"
+      plugin_name: "AlcarisChat-Paper"
+      server_ids: "e43db1de, be1dfdf2, 9cc6a6bc"
+    secrets:
+      PUFFERPANEL_URL: ${{ secrets.PUFFERPANEL_URL }}
+      PUFFERPANEL_CLIENT_ID: ${{ secrets.PUFFERPANEL_CLIENT_ID }}
+      PUFFERPANEL_CLIENT_SECRET: ${{ secrets.PUFFERPANEL_CLIENT_SECRET }}
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+  deploy-velocity:
+    needs: build-and-release
+    if: needs.build-and-release.outputs.exists == 'false'
+    uses: AlcarisMinecraftServer/.github/.github/workflows/deploy.yml@main
+    with:
+      jar_name: "AlcarisChat-Velocity-*.jar"
+      plugin_name: "AlcarisChat-Velocity"
+      server_ids: "d7655a1d"
+    secrets:
+      PUFFERPANEL_URL: ${{ secrets.PUFFERPANEL_URL }}
+      PUFFERPANEL_CLIENT_ID: ${{ secrets.PUFFERPANEL_CLIENT_ID }}
+      PUFFERPANEL_CLIENT_SECRET: ${{ secrets.PUFFERPANEL_CLIENT_SECRET }}
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
