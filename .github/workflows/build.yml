@@ -52,3 +52,9 @@ jobs:
         with:
           tag_name: "v${{ steps.version.outputs.value }}"
           files: target/*.jar
+
+      - name: Push tag to trigger deploy
+        if: steps.version.outputs.exists == 'false'
+        run: |
+          git tag "v${{ steps.version.outputs.value }}"
+          git push origin "v${{ steps.version.outputs.value }}"
