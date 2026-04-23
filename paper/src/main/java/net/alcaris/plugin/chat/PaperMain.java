@@ -35,6 +35,8 @@ public final class PaperMain extends JavaPlugin {
         PrefixSender prefixSender = new PrefixSender(this);
 
         getServer().getMessenger().registerOutgoingPluginChannel(this, "alcarischat:prefix");
+        getServer().getMessenger().registerIncomingPluginChannel(this, "alcarischat:discord",
+                new DiscordSRVBridge(this));
 
         var pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new PlayerJoinListener(prefixProvider, prefixSender), this);
