@@ -47,6 +47,7 @@ public final class VelocityMain {
         var eventManager = server.getEventManager();
         eventManager.register(this, new PlayerChatListener(server, config, prefixStore, logger));
         eventManager.register(this, new CommandExecuteListener(server, config));
+        eventManager.register(this, new TellCommandListener(server, config, prefixStore, logger));
         eventManager.register(this, new ServerConnectedListener(server, config, this));
         eventManager.register(this, new DisconnectListener(server, config));
         eventManager.register(this, new ProxyPingListener(server, config));
