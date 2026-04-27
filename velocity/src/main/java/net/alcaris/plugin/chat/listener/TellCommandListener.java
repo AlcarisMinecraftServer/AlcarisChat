@@ -36,7 +36,6 @@ public final class TellCommandListener {
     }
 
     @Subscribe
-    @SuppressWarnings("deprecation")
     public void onCommandExecute(@NotNull CommandExecuteEvent event) {
         if (!event.getResult().isAllowed()
                 || !(event.getCommandSource() instanceof Player sender)) return;
