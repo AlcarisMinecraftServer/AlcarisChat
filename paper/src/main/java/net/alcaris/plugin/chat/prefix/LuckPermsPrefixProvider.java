@@ -2,6 +2,7 @@ package net.alcaris.plugin.chat.prefix;
 
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.model.user.User;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public final class LuckPermsPrefixProvider implements PrefixProvider {
@@ -17,6 +18,7 @@ public final class LuckPermsPrefixProvider implements PrefixProvider {
         User user = luckPerms.getUserManager().getUser(player.getUniqueId());
         if (user == null) return "";
         String prefix = user.getCachedData().getMetaData().getPrefix();
-        return prefix != null ? prefix : "";
+        if (prefix == null) return "";
+        return ChatColor.translateAlternateColorCodes('&', prefix);
     }
 }
