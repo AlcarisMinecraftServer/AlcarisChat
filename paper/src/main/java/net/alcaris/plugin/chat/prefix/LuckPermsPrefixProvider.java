@@ -14,6 +14,7 @@ public final class LuckPermsPrefixProvider implements PrefixProvider {
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public String getPrefix(Player player) {
         User user = luckPerms.getUserManager().getUser(player.getUniqueId());
         if (user == null) return "";
