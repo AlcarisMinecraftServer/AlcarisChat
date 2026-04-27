@@ -54,6 +54,8 @@ public final class VelocityMain {
 
         server.getChannelRegistrar().register(
                 MinecraftChannelIdentifier.from("alcarischat:prefix"));
+        server.getChannelRegistrar().register(
+                MinecraftChannelIdentifier.from("alcarischat:discord"));
 
         logger.info("AlcarisChat (Velocity) has started.");
     }

@@ -5,6 +5,7 @@ import com.velocitypowered.api.event.player.PlayerChatEvent;
 import com.velocitypowered.api.proxy.Player;
 import com.velocitypowered.api.proxy.ProxyServer;
 import com.velocitypowered.api.proxy.ServerConnection;
+import com.velocitypowered.api.proxy.messages.MinecraftChannelIdentifier;
 import com.velocitypowered.api.proxy.server.RegisteredServer;
 import net.alcaris.plugin.chat.config.VelocityChatConfig;
 import net.alcaris.plugin.chat.japanize.Japanizer;
@@ -16,6 +17,9 @@ import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
@@ -25,6 +29,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import static com.velocitypowered.api.event.player.PlayerChatEvent.ChatResult.denied;
 
 public final class PlayerChatListener {
+
+    private static final MinecraftChannelIdentifier DISCORD_CHANNEL =
+            MinecraftChannelIdentifier.from("alcarischat:discord");
 
     private final ProxyServer proxyServer;
     private final VelocityChatConfig config;
@@ -133,8 +140,22 @@ public final class PlayerChatListener {
                 });
                 logger.info("[{}]<{}> {}", displayServerName, playerName, finalMessage);
             }
+
+            String discordMessage = wasConverted ? finalConverted + " (" + finalMessage + ")" : finalMessage;
+            currentServerOpt.ifPresent(sc -> sendDiscordMessage(sc, discordMessage));
         } finally {
             processing.set(false);
+        }
+    }
+
+    private void sendDiscordMessage(ServerConnection serverConnection, String message) {
+        try {
+            ByteArrayOutputStream b = new ByteArrayOutputStream();
+            DataOutputStream out = new DataOutputStream(b);
+            out.writeUTF(message);
+            serverConnection.sendPluginMessage(DISCORD_CHANNEL, b.toByteArray());
+        } catch (IOException e) {
+            logger.warn("Failed to send discord message to backend: {}", e.getMessage());
         }
     }
 
